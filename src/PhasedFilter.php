@@ -1,7 +1,7 @@
 <?php
 namespace Mushus\ValueFilter;
 
-class ValueFilter
+class PhasedFilter
 {
     /** nonull */
     private $filterFunc;
