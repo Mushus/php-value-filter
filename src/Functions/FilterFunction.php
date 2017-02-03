@@ -1,5 +1,5 @@
 <?php
-namespace Mushus\ValueFilter;
+namespace Mushus\ValueFilter\Functions;
 
 abstract class FilterFunction
 {
@@ -11,7 +11,7 @@ abstract class FilterFunction
     }
 
     public function getLast() {
-        return isset($next)? $next->getLast() : $this;
+        return isset($this->next)? $this->next->getLast() : $this;
     }
 
     public function next($value)

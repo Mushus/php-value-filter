@@ -1,5 +1,5 @@
 <?php
-namespace Mushus\ValueFilter;
+namespace Mushus\ValueFilter\Functions;
 
 class CustomFilterFunction extends FilterFunction
 {

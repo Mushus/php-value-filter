@@ -1,6 +1,8 @@
 <?php
 namespace Mushus\ValueFilter;
 
+use Mushus\ValueFilter\Functions;
+
 class PhasedFilter
 {
     /** nonull */
@@ -11,13 +13,13 @@ class PhasedFilter
      */
     public function __construct()
     {
-        $this->filterFunc = new NopFilterFunction();
+        $this->filterFunc = new Functions\NopFilterFunction();
     }
 
     /**
      * add filter
      */
-    public function add(FilterFunction ...$filters)
+    public function add(Functions\FilterFunction ...$filters)
     {
         foreach($filters as $filter)
         {
@@ -30,7 +32,7 @@ class PhasedFilter
     {
         foreach($funcs as $func)
         {
-            $this->filterFunc->getLast()->setNext(new CustomFilterFunction($func));
+            $this->filterFunc->getLast()->setNext(new Functions\CustomFilterFunction($func));
         }
         return $this;
     }
